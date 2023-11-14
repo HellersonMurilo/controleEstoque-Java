@@ -39,12 +39,15 @@ public class Produtos {
 
         System.out.print("Digite o preço do produto: ");
         double preco = scanner.nextDouble();
+
+        System.out.println("Informe a quantidade do produto:");
+        int quantidade = scanner.nextInt();
         scanner.nextLine(); // Consumir a quebra de linha após o próximoDouble()
 
         // Salve a informação no arquivo
         try {
             FileWriter writer = new FileWriter(nomeArquivo, true);
-            writer.write(nome + "," + preco + ";\n");
+            writer.write(quantidade + "," + nome + "," + preco + ";\n");
             writer.close();
         } catch (IOException e) {
             System.err.println("Erro ao escrever no arquivo: " + e.getMessage());

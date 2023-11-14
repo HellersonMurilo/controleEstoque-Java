@@ -61,15 +61,21 @@ public class Vendedores extends Cadastro {
         vendedores.add(getEmail());
         vendedores.add(getEndereco());
 
-        for (String i : vendedores) {
-            System.out.println(i);
-            System.out.println("============");
+        System.out.println("Deseja ver os Dados? Y/n");
+        String escolha = sc.next();
+        if (escolha == "y".toUpperCase()) {
+            for (String i : vendedores) {
+                System.out.println(i);
+                System.out.println("============");
+            }
+        }else{
+            System.out.println("Fornecedor cadastrado com sucesso");
         }
+
     }
 
-    public void RealizarVenda(String nomeProduto){
-        
-    }
+    public void RealizarVenda(String nomeProduto) {
 
+    }
 
 }
