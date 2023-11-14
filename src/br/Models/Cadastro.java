@@ -1,4 +1,4 @@
-package Classes;
+package br.Models;
 
 public abstract class Cadastro {
     // atributos

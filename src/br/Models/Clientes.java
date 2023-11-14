@@ -1,6 +1,4 @@
-package Classes.ClassesFilhas;
-
-import Classes.Cadastro;
+package br.Models;
 
 public class Clientes extends Cadastro {
     // atributos

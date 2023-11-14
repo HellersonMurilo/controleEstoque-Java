@@ -1,6 +1,4 @@
-package Classes.ClassesFilhas;
-
-import Classes.Cadastro;
+package br.Models;
 
 public class Vendedores extends Cadastro {
     
@@ -8,6 +6,7 @@ public class Vendedores extends Cadastro {
     private String cpf;
     private String rg;
 
+    //métodos acessores
     public String getCpf() {
         return cpf;
     }
@@ -33,6 +32,5 @@ public class Vendedores extends Cadastro {
 
     //método
     //criar arquivo para cadastro do Vendedor
-    
 
 }
