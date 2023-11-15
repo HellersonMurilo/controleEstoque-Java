@@ -35,13 +35,13 @@ public class Vendedores extends Cadastro {
 
     // MÉTODO
 
+    // lista para armazenar os vendedores
+    private static ArrayList<Vendedores> listaVendedores = new ArrayList<>();
+
     // Cadastro de Vendedores
     public void CadastroVendedores() {
         // importando o leitor
         Scanner sc = new Scanner(System.in);
-
-        // lista para adicionar vendedores
-        ArrayList<String> vendedores = new ArrayList<>();
 
         // input dos vendedores
         System.out.println("Informe o nome do vendedor");
@@ -55,27 +55,28 @@ public class Vendedores extends Cadastro {
         System.out.println("Informe o Endereço do vendedor");
         setEndereco(sc.next());
 
-        vendedores.add(getNome());
-        vendedores.add(getCpf());
-        vendedores.add(getRg());
-        vendedores.add(getEmail());
-        vendedores.add(getEndereco());
+        // Adiciona o vendedor à lista
+        listaVendedores.add(new Vendedores(getNome(), getEmail(), getEndereco(), getCpf(), getRg()));
 
         System.out.println("Deseja ver os Dados? Y/n");
         String escolha = sc.next();
-        if (escolha == "y".toUpperCase()) {
-            for (String i : vendedores) {
-                System.out.println(i);
+        if (escolha.equalsIgnoreCase("y")) {
+            for (Vendedores vendedor : listaVendedores) {
+                System.out.println("Nome: " + vendedor.getNome());
+                System.out.println("CPF: " + vendedor.getCpf());
+                System.out.println("RG: " + vendedor.getRg());
+                System.out.println("Email: " + vendedor.getEmail());
+                System.out.println("Endereço: " + vendedor.getEndereco());
                 System.out.println("============");
             }
-        }else{
-            System.out.println("Fornecedor cadastrado com sucesso");
+        } else {
+            System.out.println("Vendedor cadastrado com sucesso");
         }
-
     }
 
-    public void RealizarVenda(String nomeProduto) {
-
+    // Método para acessar a lista de vendedores
+    public static ArrayList<Vendedores> getListaVendedores() {
+        return listaVendedores;
     }
 
 }
